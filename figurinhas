@@ -1,0 +1,36 @@
+class Figurinhas:
+  
+ def maximizar(maria,joao):
+   controle = 0
+   quantidade = 0
+   if len(maria) < len(joao):
+     for i in range(len(maria)):
+       for j in range(len(joao)):
+         if maria[i] == joao[j]:
+          controle += 1
+          quantidade = len(maria) - controle
+
+
+         elif len(joao) < len(maria):
+          for i in range(len(joao)):
+            for j in range(len(maria)):  
+              if joao[i] == maria[j]:
+               controle += 1
+               quantidade = len(joao) - controle
+
+                                                              
+              else:
+                 for i in range(len(maria)):
+                   for j in range(len(joao)):
+                     if maria[i] == joao[j]:
+                       controle += 1
+                       quantidade = len(maria) - controle
+                       return quantidade
+    
+   
+if __name__ == '__main__':
+ A, B = input().split(' ')
+ maria = input().split(' ')
+ joao = input().split(' ')
+print(maximizar(maria, joao))
+
